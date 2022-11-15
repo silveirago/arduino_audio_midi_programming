@@ -34,7 +34,7 @@ int varThreshold = 20;  // how much it need to vary to send a message
 unsigned long potTimer[N_POT] = { 0 };
 unsigned long lastPotTime[N_POT] = { 0 };
 const int POT_TIMEOUT = 300;
-boolean potMoving[N_POT] = { false };
+boolean potGate[N_POT] = { false };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -91,7 +91,7 @@ void buttons() {
           Serial.println();
 
         } else {
-          // not off
+          // note off
 
           noteOn(MIDI_CH, NN[i], 0);
           MidiUSB.flush();
@@ -101,8 +101,6 @@ void buttons() {
           Serial.print(": off");
           Serial.println();
         }
-
-
 
         buttonPState[i] = buttonState[i];
       }
@@ -129,12 +127,12 @@ void potentiometers() {
     potTimer[i] = millis() - lastPotTime[i];
 
     if (potTimer[i] < POT_TIMEOUT) {
-      potMoving[i] = true;
+      potGate[i] = true;
     } else {
-      potMoving[i] = false;
+      potGate[i] = false;
     }
 
-    if (potMoving[i] = true) {
+    if (potGate[i] = true) {
       if (midiState[i] != midiPState[i]) {
 
         controlChange(MIDI_CH, CC[i], midiState[i]); // sends control change
