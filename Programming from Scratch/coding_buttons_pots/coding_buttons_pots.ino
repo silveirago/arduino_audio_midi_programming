@@ -136,6 +136,7 @@ void potentiometers() {
       if (midiState[i] != midiPState[i]) {
 
         controlChange(MIDI_CH, CC[i], midiState[i]); // sends control change
+        MidiUSB.flush();
 
         Serial.print("Pot ");
         Serial.print(i);
