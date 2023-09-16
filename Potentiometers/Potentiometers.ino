@@ -1,3 +1,11 @@
+/*
+This code reads the Arduino analog pins and send MIDI CC using the MIDIUSB lib
+Tutorial: https://youtu.be/hcm5H6f8MI8
+
+by Gustavo Silveira, a.k.a. Nerd Musician
+Learn how to builf your MIDI controllers: https://go.musiconerd.com/
+*/
+
 #include "MIDIUSB.h"               // Include the MIDIUSB library for MIDI communication
 #include <ResponsiveAnalogRead.h>  // Include the ResponsiveAnalogRead library from https://github.com/dxinteractive/ResponsiveAnalogRead
 

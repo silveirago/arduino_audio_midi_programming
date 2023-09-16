@@ -1,7 +1,9 @@
 /*
   This code reads the Arduino digital ports (buttons) and sends MIDI notes.
-  Created by Gustavo Silveira, a.k.a. the Nerd Musician.
-  Visit: https://go.musiconerd.com/nerd-musician-pro
+Tutorial: https://youtu.be/IcjKv6ZTiHI
+
+by Gustavo Silveira, a.k.a. Nerd Musician
+Learn how to builf your MIDI controllers: https://go.musiconerd.com/
 */
 
 #include "MIDIUSB.h" // Include the MIDIUSB library for MIDI communication
